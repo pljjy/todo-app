@@ -2,26 +2,17 @@
 
 :root{
   --text-color: #020617;
-
-  /* debugging */
-  /* --text-color: #f1f5f9; */
-  --section-background: #f1f5f9;
-  --gray: #94a3b8;
+  --section-background: #fafaf9;
+  --gray: #e2e8f0; 
+  --white: #e2e8f0;
   --gray-hover: #64748b;
 }
 
 body{
   font-size: 1rem;
-  /* TODO: change this ugly ahh background */
-  background: 
-    linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
-    linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
-    linear-gradient(315deg, black 25%, transparent 25%),
-    linear-gradient(45deg, black 25%, transparent 25%);	
-    background-size: 2em 2em;
-    background-color: #232323;
-
-  min-height: 90vh;
+  background: url('https://blogs.windows.com/wp-content/uploads/prod/sites/2/2021/11/MS_holiday_wallpaper_2400x1600.jpg');
+  background-attachment: fixed;
+  min-height: 100vh;
   color: var(--text-color);
 }
 
@@ -30,7 +21,7 @@ body{
   padding: 0;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  /* font-size: 1.2rem; */
+  color: var(--text-color);
 }
 
 .container{
@@ -50,19 +41,12 @@ svg{
   width: var(--size);
   height: var(--size);
   position: relative;
-  left: 6px;
   bottom: 1px;
-}
-
-.del-sect{
-  position: relative;
-  float: right;
-  bottom: 25px;
 }
 
 .section{
   background-color: var(--section-background);
-  border-style: none;
+  border: 1px solid black;
   border-radius: 25px;
   padding: 15px;
   max-width: 350px;
@@ -76,25 +60,88 @@ svg{
   align-items: center;
   justify-content: center;
   text-align: center;
+  user-select: none;
 }
 
 /* short for content */
 .cont{
-  padding: 40px 15px 15px 15px;
-  height: 400px;
+  padding: 20px 15px 15px 15px;
+  min-height: 400px;
   width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cont > div{
+  margin-bottom: 15px;
+}
+
+.del-sect{
+  position: relative;
+  bottom: 5px;
+  margin-bottom: 0;
 }
 
 .add-ele{
+  background-color: var(--gray);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  background-color: var(--gray);
-  border-style: none;
+  padding: 10px;
+  border: 1px solid black;
   border-radius: 25px;
 }
 
-cont > * {
-  padding: 10px 0;
+.todo-ele{
+  background-color: var(--white);
+  padding: 10px 3px 10px 10px;
+  border-radius: 12px;
+  border: 1px solid black;
+  grid-template-columns: 1fr 40px;
+  display: grid;
+  gap: 10px;
+}
+
+.task-text{
+  background-color: var(--white);
+  border: none;
+  height: 1.4rem;
+}
+
+.state{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.more-svg{
+  --local-size: 20px;
+  width: var(--local-size);
+  height: var(--local-size);
+  position: relative;
+  top: 1px;
+  right: 2px;
+} 
+
+textarea{
+  align-self: center;
+  max-height: 220px;
+  resize: none;
+}
+
+.sect-name{
+  position: relative;
+  bottom: 7px;
+  left: 5px;
+  font-size: 1.1rem;
+}
+
+.edit{
+  position: relative;
+  left: 6px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hide{
+  opacity: 0;
 }
