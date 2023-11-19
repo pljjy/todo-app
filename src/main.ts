@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import domManager from './domManager';
 import './style.css';
 
 console.clear()
@@ -10,8 +11,8 @@ $("textarea").each(function() {
   this.style.height = (this.scrollHeight) + "px";
 });
 
-$('.del-sect').on('mouseenter', function() {
-  $('.edit').removeClass('hide');
-}).on('mouseleave', function() {
-  $('.edit').addClass('hide');
-});
+// $('.del-sect').on('mouseenter', function() {
+//   $('.edit').removeClass('hide');
+// }).on('mouseleave', function() {
+//   $('.edit').addClass('hide');
+// });
