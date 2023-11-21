@@ -6,6 +6,7 @@
   --gray: #e2e8f0; 
   --white: #e2e8f0;
   --gray-hover: #64748b;
+  --clean-white: #f8fafc;
 }
 
 body{
@@ -168,7 +169,7 @@ textarea{
   transform: translate(-50%, -50%);
   height: 200px;
   width: 300px;
-  background-color: #f8fafc;
+  background-color: var(--clean-white);
   border-radius: 15px;
   border: 1px solid black;
   padding: 20px;
@@ -217,3 +218,23 @@ textarea{
 .no-select{
   user-select: none;
 }
+
+.sync{
+  position: fixed;
+  height: 40px;
+  width: 140px;
+  padding: 3px;
+  margin-left: 20px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.sync-status{
+  margin-left: 6px;
+  padding: 0 6px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: var(--clean-white);
+}
+
