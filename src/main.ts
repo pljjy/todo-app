@@ -1,18 +1,25 @@
+import './style.css';
 import $ from 'jquery';
 import domManager from './domManager';
-import './style.css';
 
+// remove on release
 console.clear()
 
-$("textarea").each(function() {
-  this.setAttribute("style", `height:${this.scrollHeight}px;overflow-y:hidden;`);
-}).on("input", function() {
-  this.style.height = "0";
-  this.style.height = (this.scrollHeight) + "px";
+$('.add').on('click', function() {
+  $(this).before(domManager.createCont().clone());
 });
 
-// $('.del-sect').on('mouseenter', function() {
-//   $('.edit').removeClass('hide');
-// }).on('mouseleave', function() {
-//   $('.edit').addClass('hide');
-// });
+
+// Event delegation for existing and dynamically added '.cont' elements
+$(document).on('mouseenter', '.del-sect', domManager.showEdit)
+  .on('mouseleave', '.del-sect', domManager.hideEdit)
+  .on('click', '.add-ele', domManager.addTodoEle)
+  .on('click', '.todo-ele > .state > .x-btn', domManager.removeParentParentElement)
+  .on('change', '.checkbox', domManager.checkboxChange)
+  .on('input', '.todo-ele > textarea', domManager.extandableTextArea)
+  .on('click', '.cont > .del-sect > .x-btn', domManager.deleteCont)
+  .on('click', '.edit', domManager.changeName)
+  .on('input', '.new-name-inp', domManager.dynamicNewNameChange)
+
+
+// TODO: make save and load
