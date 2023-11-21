@@ -30,7 +30,7 @@ body{
   height: 100%;
   padding: 50px;
   display: flex;
-  gap: 130px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
