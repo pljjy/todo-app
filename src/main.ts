@@ -1,7 +1,6 @@
 import './style.css';
 import $ from 'jquery';
 import domManager from './domManager';
-import { functions } from 'lodash';
 
 
 // default value because otherwise it's empty
@@ -21,6 +20,6 @@ $(document).on('mouseenter', '.del-sect', domManager.showEdit)
   .on('input', '.new-name-inp', domManager.dynamicNewNameChange)
   .on('click', '.save', domManager.save)
   .on('click', '.load', domManager.load)
-  .on('click', 'add', function() {
+  .on('click', '.add', function() {
     $(this).before(domManager.createCont().clone());
   });
