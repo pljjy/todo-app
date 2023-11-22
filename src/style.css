@@ -130,6 +130,7 @@ textarea{
   align-self: center;
   max-height: 220px;
   resize: none;
+  overflow-y: auto;
 }
 
 .sect-name{
@@ -167,14 +168,15 @@ textarea{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 200px;
-  width: 300px;
+  height: 300px;
+  width: 400px;
   background-color: var(--clean-white);
   border-radius: 15px;
   border: 1px solid black;
   padding: 20px;
   display: flex;
   align-items: center;
+  font-size: 1.3em;
 }
 
 .name-dialog{
@@ -188,10 +190,11 @@ textarea{
 }
 
 .new-name-inp{
-  max-width: 300px;
+  width: 350px;
   border-style: none;
   border-radius: 10px;
   padding: 5px;
+  font-size: 1.2rem;
   height: 1.1rem;
   overflow-x: scroll;
   border: 1px solid black;
@@ -201,17 +204,20 @@ textarea{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  font-size: 1.1rem;
+  gap: 20px;
 }
 
 .bot-dialog > button{
   padding: 0 8px;
   width: fit-content;
   height: 2.4em;
+  font-size: 1rem;
 }
 
 .old-new-comp{
-  font-size: 0.7rem;
+  font-size: 1.1rem;
+  margin-top: 20px;
   opacity: 0.8;
 }
 
