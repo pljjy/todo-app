@@ -141,9 +141,16 @@ const domManager = function() {
   // loads .container
   function load() {
     const loadedContainer = localStorage.getItem('container');
+
+    // default value because otherwise it's empty
+    if (!loadedContainer) {
+      localStorage.setItem('container', '<div class="add section no-select"><span>Add new </span><svg class="plus-svg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"></path></svg></div>');
+      return;
+    }
+
     $('.container').empty();
     $(loadedContainer).appendTo('.container');
-    
+
     // when loaded, checkboxes are not checked, so it checks them by finding which ones have a parent with green border
     $('.green-border').each(function() {
       $(this).find('.checkbox').prop('checked', true)
